@@ -1,36 +1,50 @@
 /* Style de base pour le body */
 body {
-    font-family: Arial, sans-serif; /* Police de caractère */
-    margin: 0;                     /* Enlève les marges par défaut */
-    padding: 0;                    /* Enlève les espacements internes */
-    height: 100vh;                 /* Remplir toute la hauteur de la fenêtre */
-    display: flex;                 /* Utilise Flexbox pour le centrage */
-    justify-content: center;       /* Centre horizontalement */
-    align-items: center;           /* Centre verticalement */
-    background-color: #f0f0f0;     /* Couleur de fond légère */
+    font-family: Arial, sans-serif;  /* Utilisation d'une police sans-serif */
+    margin: 0;                      /* Enlever les marges par défaut */
+    padding: 0;                     /* Enlever les espacements internes */
+    height: 100vh;                  /* La hauteur prend toute la fenêtre */
+    display: flex;                  /* Utilisation de Flexbox pour centrer les éléments */
+    justify-content: center;        /* Centrage horizontal */
+    align-items: center;            /* Centrage vertical */
+    background-color: #000;         /* Fond noir pour le contraste avec la vidéo */
 }
 
-/* Centrer le lien et l'agrandir */
-.centered-link {
-    display: block;               /* Transforme le lien en élément bloc */
-    text-align: center;           /* Centre le texte */
-    font-size: 30px;              /* Agrandit la taille du texte */
-    color: #0000FF;               /* Couleur du texte en bleu */
-    text-decoration: none;        /* Enlève le soulignement */
-    padding: 10px 20px;           /* Ajoute un peu de padding autour du texte */
-    border: 2px solid #0000FF;    /* Ajoute une bordure autour du lien */
-    border-radius: 5px;           /* Arrondit les coins de la bordure */
-    transition: all 0.3s ease;    /* Ajoute une transition douce */
+/* Style pour la vidéo */
+video {
+    max-width: 100%;                /* Assurer que la vidéo ne dépasse pas la largeur de l'écran */
+    max-height: 100%;               /* Assurer que la vidéo ne dépasse pas la hauteur de l'écran */
 }
 
-/* Effet de survol du lien */
-.centered-link:hover {
-    color: #FF5733;               /* Change la couleur du texte au survol */
-    background-color: #e0e0e0;    /* Change la couleur de fond au survol */
-    border-color: #FF5733;        /* Change la couleur de la bordure */
+/* Style pour le bouton */
+button {
+    position: absolute;             /* Position absolue pour que le bouton soit superposé à la vidéo */
+    bottom: 20px;                   /* Positionner le bouton 20px du bas de l'écran */
+    left: 50%;                       /* Centrer le bouton horizontalement */
+    transform: translateX(-50%);    /* Correction pour centrer précisément */
+    padding: 10px 20px;             /* Ajouter de l'espace autour du texte du bouton */
+    font-size: 18px;                /* Taille de la police du bouton */
+    background-color: rgba(255, 255, 255, 0.7); /* Fond légèrement transparent */
+    border: none;                   /* Retirer la bordure du bouton */
+    border-radius: 5px;             /* Coins arrondis */
+    cursor: pointer;                /* Curseur en forme de main */
+    transition: background-color 0.3s; /* Transition douce pour l'effet de survol */
 }
 
-/* Optionnel : ajouter un style global pour les liens */
-a {
-    text-decoration: none; /* Supprime le soulignement pour tous les liens */
+/* Effet de survol du bouton */
+button:hover {
+    background-color: rgba(255, 255, 255, 1);  /* Le fond devient opaque au survol */
 }
+
+/* Style pour le texte de la vidéo si le navigateur ne supporte pas */
+video::after {
+    content: "Votre navigateur ne supporte pas la balise vidéo.";
+    color: white;
+    font-size: 18px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Centrer le texte d'erreur */
+    text-align: center;
+}
+

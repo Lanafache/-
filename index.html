@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Image Plein Écran</title>
+    <title>Mon Site avec Vidéo</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <a href="https://matias.me/nsfw/?fbclid=PAZXh0bgNhZW0CMTEAAaakc_79duViqIZTmuY92f8fLSM4IrPmwodvl55zENh9U2w28JjdEWDhJdM_aem_JajEyTKKIto-CRCCHbUamw" target="_blank">
-        Cliquez ici pour visiter le site
-    </a>
+    <video id="myVideo" width="100%" height="100%" loop>
+        <source src="triangle.mp4" type="video/mp4">
+        Votre navigateur ne supporte pas la balise vidéo.
+    </video>
+    <button onclick="document.getElementById('myVideo').play()">Lire la vidéo</button>
 </body>
 </html>
